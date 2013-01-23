@@ -7,6 +7,7 @@ ROOT=$DIST/pandoc
 SCRIPTS=osx-resources
 BASE=pandoc-$VERSION
 ME=jgm
+CODESIGNID="Developer ID Application: Text Software Limited"
 
 echo Removing old files...
 rm -rf $DIST
@@ -41,6 +42,10 @@ sudo $PACKAGEMAKER \
     --no-relocate \
     --scripts $SCRIPTS \
     --out $BASE.pkg
+
+echo Signing package...
+
+codesign --force --sign "$CODESIGNID" $BASE.pkg
 
 echo Creating disk image...
 
