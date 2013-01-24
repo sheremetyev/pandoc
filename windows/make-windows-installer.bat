@@ -13,3 +13,4 @@ copy COPYING COPYING.txt
 copy COPYRIGHT COPYRIGHT.txt
 cd windows
 ISCC pandoc-setup.iss
+"C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\signtool.exe" sign /a /t http://timestamp.verisign.com/scripts/timstamp.dll Output\pandoc-setup.exe 
